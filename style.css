@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  text-align: center;
+  font-family: Orbitron;
+  animation: bgCycle 12s infinite alternate;
+}
+
+@keyframes bgCycle {
+  0% { background:#ffd166 }
+  25% { background:#90dbf4 }
+  50% { background:#ffcad4 }
+  75% { background:#cdb4db }
+  100% { background:#b7e4c7 }
+}
+
+/* BRAND FONT CHANGE */
+#brand {
+  font-size: 3em;
+  animation: fontSwap 6s infinite;
+}
+@keyframes fontSwap {
+  0% { font-family: Rubik Glitch; }
+  50% { font-family: Monoton; }
+  100% { font-family: Pacifico; }
+}
+
+nav { margin: 20px; }
+
+button {
+  padding: 14px 26px;
+  margin: 6px;
+  border-radius: 14px;
+  border: none;
+  background: white;
+  font-family: Pacifico;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+/* PAGE SYSTEM */
+#pages { position: relative; overflow: hidden; }
+.page {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s ease;
+}
+.page.active { opacity: 1; transform: translateX(0); position: relative; }
+
+/* EFFECTS */
+.grass:active { animation: grassCrash 0.4s; }
+@keyframes grassCrash { 50% { transform: scale(0.85) rotate(-5deg); } }
+
+.glass { box-shadow: inset 0 0 12px rgba(255,255,255,.7); }
+
+/* BELL BUTTON */
+.bell-btn {
+  width: 230px;
+  height: 55px;
+  border-radius: 30px;
+  position: relative;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bell-icon {
+  position: absolute;
+  left: 18px;
+  transition: all 0.4s ease;
+}
+.bell-btn.active .bell-icon {
+  left: calc(100% - 42px);
+  animation: bellShake 0.6s infinite;
+}
+@keyframes bellShake {
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+/* TIMER */
+.time-inputs input {
+  width: 60px;
+  padding: 8px;
+  margin: 4px;
+}
+
+/* STOPWATCH CIRCLE */
+.stopwatch-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 6px solid white;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
+  background: rgba(255,255,255,0.4);
+}
+
+/* CONTACT & FAQ */
+.contact, .faq { margin: 20px auto; width: 80%; text-align: left; font-size: 1.1em; }
+.contact a { color: #007e33; font-weight: bold; text-decoration: none; }
+.contact a:hover { text-decoration: underline; }
+.faq h3 { margin-top: 20px; font-family: Rubik Glitch, sans-serif; }
+
+/* FOOTER */
+footer {
+  margin: 40px auto;
+  width: 65%;
+  padding: 12px;
+  border-radius: 50px;
+  border: 5px solid red;
+  animation: borderColor 1s infinite;
+}
+@keyframes borderColor {
+  0% { border-color:red }
+  50% { border-color:blue }
+  100% { border-color:green }
+}

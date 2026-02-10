@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celes Alarm</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Rubik+Glitch&family=Monoton&family=Inter&family=Poppins&family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- INTRO ANIMATION -->
+<div id="intro">
+  <div class="loading-clock">
+    <div class="hand hour"></div>
+    <div class="hand minute"></div>
+    <div class="hand second"></div>
+  </div>
+  <div class="intro-text">CELES ALARM</div>
+</div>
+
+<h1 id="brand">Celes Alarm</h1>
+
+<nav>
+  <button onclick="goPage('home','forward')" class="nav-btn">Home</button>
+  <button onclick="goPage('alarm','forward')" class="nav-btn">Alarm</button>
+  <button onclick="goPage('timer','forward')" class="nav-btn">Timer</button>
+  <button onclick="goPage('stopwatch','forward')" class="nav-btn">Stopwatch</button>
+  <button onclick="goPage('contact','forward')" class="nav-btn">Contact & FAQ</button>
+</nav>
+
+<div id="pages">
+
+  <!-- HOME -->
+  <section class="page active" id="home">
+    <p>Select what you want to use ⏰</p>
+  </section>
+
+  <!-- ALARM -->
+  <section class="page" id="alarm">
+    <h2>Alarm</h2>
+    <div id="clock"></div>
+    <input type="time" id="alarmTime">
+    <select id="alarmSound">
+      <option value="beep">Beep</option>
+      <option value="buzz">Buzz</option>
+      <option value="chime">Chime</option>
+      <option value="ring">Ring</option>
+    </select>
+    <br><br>
+    <button id="alarmBtn" class="bell-btn" onclick="toggleAlarm()">
+      <span class="bell-icon">🔔</span>
+      <span class="btn-text">Activate</span>
+    </button>
+  </section>
+
+  <!-- TIMER -->
+  <section class="page" id="timer">
+    <h2>Timer</h2>
+    <div class="time-inputs">
+      <input type="number" id="th" placeholder="HH">
+      <input type="number" id="tm" placeholder="MM">
+      <input type="number" id="ts" placeholder="SS">
+      <input type="number" id="tms" placeholder="MS">
+    </div>
+    <button class="nav-btn" onclick="startTimer()">Start</button>
+    <h3 id="timerDisplay">00:00:00:000</h3>
+  </section>
+
+  <!-- STOPWATCH -->
+  <section class="page" id="stopwatch">
+    <h2>Stopwatch</h2>
+    <div class="stopwatch-circle">
+      <span id="swDisplay">00:00:00.0</span>
+    </div>
+    <button class="nav-btn" onclick="startSW()">Start</button>
+    <button class="nav-btn" onclick="stopSW()">Stop</button>
+    <button class="nav-btn" onclick="resetSW()">Reset</button>
+  </section>
+
+  <!-- CONTACT & FAQ -->
+  <section class="page" id="contact">
+    <h2>Contact & FAQ</h2>
+    <div class="contact">
+      <p>📱 WhatsApp: <a href="https://wa.me/254759427027" target="_blank">0759427027</a></p>
+    </div>
+    <div class="faq">
+      <h3>Frequently Asked Questions</h3>
+      <p><strong>Q:</strong> How do I set an alarm?<br>
+         <strong>A:</strong> Go to the Alarm page, select time, choose a sound, and press Activate.</p>
+      <p><strong>Q:</strong> Can I use multiple timers?<br>
+         <strong>A:</strong> Only one timer works at a time; reset and start another if needed.</p>
+      <p><strong>Q:</strong> How does the stopwatch work?<br>
+         <strong>A:</strong> Go to Stopwatch page, press Start to count, Stop to pause, Reset to clear.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>Celes Alarm</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
